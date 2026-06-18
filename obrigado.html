@@ -4,13 +4,10 @@
 
 <!-- =====================================================
      SUPERKIT ACS — OBRIGADO v3
-     CRÍTICO: Esta página dispara o evento Purchase no Meta
-     e no GA4. Deve ser configurada como página de obrigado
-     personalizada no produto Hotmart (Product ID 7910774).
-     URL: https://leothaylor.github.io/Superkit-operacional-ACS-campanha-v3/obrigado.html
+     CRÍTICO: Evento Purchase no Meta e no GA4 V3.
 ===================================================== -->
 
-<!-- META PIXEL — Purchase (o que faz aparecer valor no painel Meta Ads) -->
+<!-- META PIXEL — Purchase -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -19,20 +16,20 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
 (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1533716411742409');
 fbq('track', 'PageView');
-// Purchase — dispara com valor real. É isso que aparece como "valor de compra" no Meta Ads.
+// Purchase — dispara com valor real para a campanha V3.
 fbq('track', 'Purchase', {
   value: 29.90,
   currency: 'BRL',
   content_name: 'SuperKit ACS v3',
   content_ids: ['superkit_acs'],
   content_type: 'product',
-  event_id: 'purchase_' + Date.now() // evita duplicação
+  event_id: 'purchase_v3_' + Date.now() 
 });
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1533716411742409&ev=Purchase&noscript=1"/></noscript>
 
-<!-- GA4 — evento purchase -->
+<!-- GA4 — evento purchase V3 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6FCRV2Q4Z"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -40,10 +37,10 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-H6FCRV2Q4Z');
 gtag('event', 'purchase', {
-  transaction_id: 'txn_' + Date.now(),
+  transaction_id: 'txn_v3_' + Date.now(),
   value: 29.90,
   currency: 'BRL',
-  items: [{ item_id: 'superkit_acs', item_name: 'SuperKit ACS', price: 29.90, quantity: 1 }]
+  items: [{ item_id: 'superkit_acs_v3', item_name: 'SuperKit ACS v3', price: 29.90, quantity: 1 }]
 });
 </script>
 
@@ -77,7 +74,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)
 </script>
 <style>
   body { background-color:#f8fafc; color:#0f172a; -webkit-font-smoothing:antialiased; }
-  .no-select { user-select:none; -webkit-user-select:none; pointer-events:none; }
 </style>
 </head>
 <body class="font-sans flex flex-col min-h-screen">
@@ -93,56 +89,39 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)
 </nav>
 
 <!-- CONTEÚDO -->
-<main class="flex-grow flex items-center justify-center py-12 px-5">
-  <div class="max-w-md w-full bg-white p-8 md:p-10 rounded-[2rem] shadow-xl border border-slate-100 text-center relative overflow-hidden">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-sm h-32 bg-acs-light blur-[50px] rounded-full pointer-events-none"></div>
-
-    <div class="relative z-10">
-      <!-- Ícone -->
-      <div class="w-20 h-20 bg-acs-light rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-acs-teal/20">
-        <svg class="w-10 h-10 text-acs-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-        </svg>
-      </div>
-
-      <h1 class="text-3xl font-black text-acs-ink mb-4 tracking-tight">
-        Tudo certo!<br>
-        <span class="text-acs-teal">Compra confirmada.</span>
-      </h1>
-
-      <p class="text-slate-600 font-medium leading-relaxed mb-8">
-        Seu acesso ao <strong class="text-acs-dark">SuperKit ACS</strong> foi liberado pela Hotmart.<br><br>
-        Acesse com o mesmo e-mail usado na compra.
-      </p>
-
-      <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8 text-left space-y-3">
-        <h3 class="font-bold text-acs-ink text-sm flex items-center gap-2">
-          <svg class="w-4 h-4 text-acs-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          Próximos passos:
-        </h3>
-        <ol class="text-sm text-slate-600 font-medium list-decimal list-inside space-y-2">
-          <li>Clique no botão abaixo para acessar suas compras na Hotmart.</li>
-          <li>Entre com o mesmo e-mail usado na compra.</li>
-          <li>Abra o SuperKit ACS na área de membros.</li>
-          <li>Baixe os 4 arquivos em PDF.</li>
-          <li>Imprima as fichas que fizerem sentido para sua rotina.</li>
-        </ol>
-        <p class="text-xs text-slate-400 mt-2 italic">
-          *Se o pagamento foi feito por Pix, a liberação pode levar alguns minutos após a confirmação.
-        </p>
-      </div>
-
-      <a href="https://consumer.hotmart.com" target="_blank"
-         class="block w-full bg-acs-ink hover:bg-slate-800 text-white font-bold text-lg py-4 px-6 rounded-xl shadow-lg transition-colors">
-        Acessar minhas compras
-      </a>
-
-      <!-- Reforço pós-compra — reduz arrependimento -->
-      <p class="text-xs text-slate-400 mt-5 leading-relaxed">
-        Dúvidas? Fala com a gente pelo Instagram <strong>@rotina_acs</strong>.<br>
-        Lembra: você tem 7 dias de garantia pela Hotmart.
-      </p>
+<main class="flex-grow flex items-center justify-center py-10 px-5">
+  <div class="max-w-md w-full bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 text-center">
+    
+    <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-5 border-2 border-emerald-100">
+      <span class="text-emerald-500 text-3xl font-bold">✓</span>
     </div>
+
+    <h1 class="text-2xl font-black text-acs-ink mb-2 tracking-tight">
+      Sua rotina acaba de ficar<br><span class="text-acs-teal">mais segura.</span>
+    </h1>
+
+    <p class="text-sm text-slate-600 font-medium leading-relaxed mb-6">
+      Seu pagamento foi confirmado. O material já está liberado no ambiente seguro da Hotmart.
+    </p>
+
+    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-6 text-left">
+      <h3 class="font-bold text-acs-ink text-sm mb-3">Siga os 3 passos:</h3>
+      <ol class="text-sm text-slate-600 font-medium space-y-3">
+        <li class="flex gap-2"><span class="font-bold text-acs-teal">1.</span> Clique no botão escuro abaixo para abrir a Hotmart.</li>
+        <li class="flex gap-2"><span class="font-bold text-acs-teal">2.</span> Entre com o seu e-mail de compra (o mesmo usado no Pix/Cartão).</li>
+        <li class="flex gap-2"><span class="font-bold text-acs-teal">3.</span> Baixe os PDFs do SuperKit e imprima as fichas que você precisa hoje.</li>
+      </ol>
+    </div>
+
+    <a href="https://consumer.hotmart.com" target="_blank"
+       class="block w-full bg-acs-ink hover:bg-slate-800 text-white font-bold text-[1.1rem] py-4 px-6 rounded-xl shadow-lg transition-colors">
+      Acessar minhas fichas
+    </a>
+
+    <p class="text-xs text-slate-400 mt-5 leading-relaxed">
+      Dúvidas? Mande um direct no Instagram <strong>@rotina_acs</strong>.<br>
+      Sua garantia de 7 dias já está ativa.
+    </p>
   </div>
 </main>
 
