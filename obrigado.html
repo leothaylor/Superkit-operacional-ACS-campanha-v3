@@ -4,7 +4,7 @@
 
 <!-- =====================================================
      SUPERKIT ACS — OBRIGADO v3
-     CRÍTICO: Evento Purchase no Meta e no GA4 V3.
+     CRÍTICO: Evento Purchase isolado para a V3.
 ===================================================== -->
 
 <!-- META PIXEL — Purchase -->
@@ -16,12 +16,13 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
 (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1533716411742409');
 fbq('track', 'PageView');
-// Purchase — dispara com valor real para a campanha V3.
+
+// Purchase — Disparo exclusivo da V3 para o Meta Ads
 fbq('track', 'Purchase', {
   value: 29.90,
   currency: 'BRL',
   content_name: 'SuperKit ACS v3',
-  content_ids: ['superkit_acs'],
+  content_ids: ['superkit_acs_v3'],
   content_type: 'product',
   event_id: 'purchase_v3_' + Date.now() 
 });
@@ -29,13 +30,14 @@ fbq('track', 'Purchase', {
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1533716411742409&ev=Purchase&noscript=1"/></noscript>
 
-<!-- GA4 — evento purchase V3 -->
+<!-- GA4 — Evento purchase exclusivo V3 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6FCRV2Q4Z"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-H6FCRV2Q4Z');
+
 gtag('event', 'purchase', {
   transaction_id: 'txn_v3_' + Date.now(),
   value: 29.90,
