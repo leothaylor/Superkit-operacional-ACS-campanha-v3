@@ -3,14 +3,13 @@
 <head>
 
 <!-- =====================================================
-     SUPERKIT ACS — LANDING v2
-     Repositório: Superkit-operacional-ACS-campanha-v2
-     Pixel Meta:  1533716411742409 (mesmo pixel, stream v2)
-     GA4:         G-H6FCRV2Q4Z (mesma property, stream v2)
+     SUPERKIT ACS — LANDING v3
+     Repositório: Superkit-operacional-ACS-campanha-v3
+     Pixel Meta:  1533716411742409 (mesmo pixel, stream v3)
+     GA4:         G-H6FCRV2Q4Z (mesma property, stream v3)
      Clarity:     x4ziqa0wml (mesmo projeto)
      Checkout:    https://pay.hotmart.com/D106253909R
      Obrigado:    /obrigado.html
-     Versão:      2.0 — 14/06/2026
 ===================================================== -->
 
 <!-- GA4 -->
@@ -133,7 +132,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)
       <img src="assets/hero.jpg" alt="SuperKit ACS na prática" class="w-full h-auto object-cover no-select" onerror="this.style.display='none'">
     </div>
 
-    <a href="#oferta" data-position="topo" class="cta-button block w-full bg-acs-teal text-white font-black text-xl py-5 px-8 rounded-2xl shadow-lg shadow-teal-500/30 uppercase tracking-wide">
+    <a href="https://pay.hotmart.com/D106253909R?utm_source=landing&utm_medium=organico&utm_campaign=superkit_acs&utm_content=v3_topo" data-position="topo" class="cta-button block w-full bg-acs-teal text-white font-black text-xl py-5 px-8 rounded-2xl shadow-lg shadow-teal-500/30 uppercase tracking-wide">
       Quero organizar minha rotina
     </a>
     <p class="text-sm font-bold text-slate-400 mt-3">Receba em PDF agora • Imprima e use na rotina</p>
@@ -295,7 +294,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)
       </div>
       <div class="bg-white border border-teal-100 rounded-2xl p-6 shadow-sm">
         <p class="text-slate-700 font-medium text-sm leading-relaxed mb-4">
-          "Uso o checklist de C1 a C7 antes da reunião mensal. Clareza que o caderno comum nunca me deu."
+          "Uso o checklist de C1 a C7 antes da reunião mensal. Clareza que o caderno comum nunca me me deu."
         </p>
         <div class="flex items-center gap-2">
           <div class="w-8 h-8 rounded-full bg-acs-light flex items-center justify-center text-acs-dark font-black text-sm">A</div>
@@ -404,7 +403,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)
         <li class="flex items-center gap-3"><span class="text-teal-400 font-bold">✓</span> <strong>7 dias de garantia — não gostou, devolvemos tudo</strong></li>
       </ul>
 
-      <a href="https://pay.hotmart.com/D106253909R?off=superkit-v2" data-position="oferta_final" class="cta-button block w-full bg-acs-teal hover:bg-teal-400 text-white font-black text-xl py-5 px-6 rounded-2xl shadow-[0_0_30px_rgba(20,184,166,0.3)] uppercase tracking-wide">
+      <a href="https://pay.hotmart.com/D106253909R?utm_source=landing&utm_medium=organico&utm_campaign=superkit_acs&utm_content=v3_oferta_final" data-position="oferta_final" class="cta-button block w-full bg-acs-teal hover:bg-teal-400 text-white font-black text-xl py-5 px-6 rounded-2xl shadow-[0_0_30px_rgba(20,184,166,0.3)] uppercase tracking-wide">
         Quero organizar minha rotina
       </a>
 
@@ -421,7 +420,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)
       <p class="text-xl font-black text-acs-ink leading-none">R$ 29,90</p>
     </div>
   </div>
-  <a href="https://pay.hotmart.com/D106253909R?off=superkit-v2" data-position="barra_fixa" class="cta-button bg-acs-teal hover:bg-teal-400 text-white font-black text-sm py-3 px-6 rounded-xl uppercase tracking-wider shrink-0 shadow-[0_0_15px_rgba(20,184,166,0.3)]">
+  <a href="https://pay.hotmart.com/D106253909R?utm_source=landing&utm_medium=organico&utm_campaign=superkit_acs&utm_content=v3_barra_fixa" data-position="barra_fixa" class="cta-button bg-acs-teal hover:bg-teal-400 text-white font-black text-sm py-3 px-6 rounded-xl uppercase tracking-wider shrink-0 shadow-[0_0_15px_rgba(20,184,166,0.3)]">
     ACESSAR AGORA
   </a>
 </div>
@@ -475,16 +474,16 @@ document.addEventListener('DOMContentLoaded', function() {
       var pos = this.getAttribute('data-position');
       // GA4
       if (typeof gtag === 'function') {
-        if (pos === 'topo')         gtag('event', 'acs_checkout_click_topo_v2');
-        if (pos === 'oferta_final') gtag('event', 'acs_checkout_click_oferta_final_v2');
-        if (pos === 'barra_fixa')   gtag('event', 'acs_checkout_click_barra_fixa_v2');
+        if (pos === 'topo')         gtag('event', 'acs_checkout_click_topo_v3');
+        if (pos === 'oferta_final') gtag('event', 'acs_checkout_click_oferta_final_v3');
+        if (pos === 'barra_fixa')   gtag('event', 'acs_checkout_click_barra_fixa_v3');
       }
       // META — InitiateCheckout (aparece como evento no painel de conversões)
       if (typeof fbq === 'function') {
-        fbq('track', 'InitiateCheckout', { value: 29.90, currency: 'BRL', content_name: 'SuperKit ACS v2' });
-        if (pos === 'topo')         fbq('trackCustom', 'ACS_CheckoutClick_Topo_v2');
-        if (pos === 'oferta_final') fbq('trackCustom', 'ACS_CheckoutClick_OfertaFinal_v2');
-        if (pos === 'barra_fixa')   fbq('trackCustom', 'ACS_CheckoutClick_BarraFixa_v2');
+        fbq('track', 'InitiateCheckout', { value: 29.90, currency: 'BRL', content_name: 'SuperKit ACS v3' });
+        if (pos === 'topo')         fbq('trackCustom', 'ACS_CheckoutClick_Topo_v3');
+        if (pos === 'oferta_final') fbq('trackCustom', 'ACS_CheckoutClick_OfertaFinal_v3');
+        if (pos === 'barra_fixa')   fbq('trackCustom', 'ACS_CheckoutClick_BarraFixa_v3');
       }
     });
   });
@@ -498,16 +497,16 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', function() {
     var pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
     if (!fired50 && pct >= 50) { fired50 = true;
-      if (typeof gtag === 'function') gtag('event', 'scroll_50_v2');
-      if (typeof fbq === 'function') fbq('trackCustom', 'Scroll50_v2');
+      if (typeof gtag === 'function') gtag('event', 'scroll_50_v3');
+      if (typeof fbq === 'function') fbq('trackCustom', 'Scroll50_v3');
     }
     if (!fired75 && pct >= 75) { fired75 = true;
-      if (typeof gtag === 'function') gtag('event', 'scroll_75_v2');
-      if (typeof fbq === 'function') fbq('trackCustom', 'Scroll75_v2');
+      if (typeof gtag === 'function') gtag('event', 'scroll_75_v3');
+      if (typeof fbq === 'function') fbq('trackCustom', 'Scroll75_v3');
     }
     if (!fired90 && pct >= 90) { fired90 = true;
-      if (typeof gtag === 'function') gtag('event', 'scroll_90_v2');
-      if (typeof fbq === 'function') fbq('trackCustom', 'Scroll90_v2');
+      if (typeof gtag === 'function') gtag('event', 'scroll_90_v3');
+      if (typeof fbq === 'function') fbq('trackCustom', 'Scroll90_v3');
     }
   });
 })();
@@ -516,12 +515,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- TEMPO NA PÁGINA -->
 <script>
 setTimeout(function() {
-  if (typeof gtag === 'function') gtag('event', 'time_on_page_30s_v2');
-  if (typeof fbq === 'function') fbq('trackCustom', 'TimeOnPage30s_v2');
+  if (typeof gtag === 'function') gtag('event', 'time_on_page_30s_v3');
+  if (typeof fbq === 'function') fbq('trackCustom', 'TimeOnPage30s_v3');
 }, 30000);
 setTimeout(function() {
-  if (typeof gtag === 'function') gtag('event', 'time_on_page_60s_v2');
-  if (typeof fbq === 'function') fbq('trackCustom', 'TimeOnPage60s_v2');
+  if (typeof gtag === 'function') gtag('event', 'time_on_page_60s_v3');
+  if (typeof fbq === 'function') fbq('trackCustom', 'TimeOnPage60s_v3');
 }, 60000);
 </script>
 
